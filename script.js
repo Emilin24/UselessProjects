@@ -38,6 +38,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const dragThrottle = 16; // ~60fps
     const daysPerYear = 365;
 
+function addReminderToBox(reminderText) {
+    const list = document.getElementById('reminder-list');
+    const li = document.createElement('li');
+    li.textContent = reminderText;
+    li.style.borderBottom = '1px solid #eee';
+    li.style.padding = '5px 0';
+    list.appendChild(li);
+}
+
+
     // Initialize
     function init() {
         updateEarthPosition();
@@ -375,6 +385,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 "A solar flare wiped your reminder because 'the Sun got mad.'\n\nTry again when the Sun is in a better mood.",
                 "OK"
             );
+                      addReminderToBox(reminder);
+            addReminderToBox(reminder);
             return;
         }
 
