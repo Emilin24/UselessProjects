@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrbitCal™ - The Future of Scheduling</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>OrbitCal™</h1>
+            <p class="tagline">Picking a date is now an Interplanetary Achievement.</p>
+            <div class="app-version">v1.0.0 - Free Trial (Year 3025 Only)</div>
+        </header>
+        
+        <div class="solar-system">
+            <div class="sun"></div>
+            <div class="orbit earth-orbit">
+                <div class="planet earth" draggable="true"></div>
+            </div>
+            <div class="orbit jupiter-orbit">
+                <div class="planet jupiter"></div>
+            </div>
+            <div class="orbit mars-orbit">
+                <div class="planet mars"></div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <div class="date-display">
+                <p>Current Date: <span id="current-date">January 1, 3025</span></p>
+                <div class="physics-meter">
+                    <div class="meter-bar" id="orbit-stability-meter"></div>
+                    <span class="physics-status" id="physics-status">Orbit Stable</span>
+                </div>
+            </div>
+            
+            <div class="reminder-form">
+                <input type="text" id="reminder-text" placeholder="Enter reminder..." maxlength="50">
+                <button id="set-reminder">Set Reminder (Free: 3025 only)</button>
+                <div class="reminder-counter"><span id="char-count">0</span>/50</div>
+            </div>
+            
+            <div class="premium-upsell">
+                <button id="upgrade-btn">Upgrade to OrbitCal Premium™ ($9.99/mo)</button>
+                <div class="premium-features">
+                    <p>✨ Premium Features ✨</p>
+                    <ul>
+                        <li>Leap Years</li>
+                        <li>Moon Orbit Control</li>
+                        <li>Disable Solar Flares</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="user-review">
+                <p>"Finally a calendar app that respects the Laws of Cosmos."</p>
+                <p class="reviewer">- No One Ever</p>
+            </div>
+        </div>
+        
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <h2 id="modal-title">Oops!</h2>
+                <p id="modal-message"></p>
+                <div class="modal-actions">
+                    <button id="modal-close">Close</button>
+                    <button id="modal-action" style="display: none;"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

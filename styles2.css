@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #2e003e, #4b0082);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #e0d4f7;
+}
+
+.login-container {
+    background-color: rgba(50, 0, 70, 0.9);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    width: 350px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 100px;
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+    color: #d8b4fe;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #e0d4f7;
+}
+
+input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #a78bfa;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #2e003e;
+    color: #f3e8ff;
+}
+
+input:focus {
+    outline: none;
+    border-color: #c084fc;
+    box-shadow: 0 0 6px #c084fc;
+}
+
+button {
+    background-color: #8b5cf6;
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #7c3aed;
+}
+
+.image-container {
+    margin-top: 2rem;
+    position: relative;
+    height: 200px;
+}
+
+.target-image {
+    position: absolute;
+    left: 25%; /* Changed from 50% to position on the left side */
+    bottom: 30px; /* Added to position at bottom with spacing */
+    width: 120px; /* Increased from 80px */
+    height: 120px; /* Increased from 80px */
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #a78bfa; /* Thicker border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+    transform: none; /* Removed translateX since we're not centering anymore */
+}
+
+.movable-image {
+    position: absolute;
+    right: 25%; /* Position on the right side */
+    bottom: 30px; /* Align with target image */
+    width: 120px; /* Increased from 80px */
+    height: 120px; /* Increased from 80px */
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #8b5cf6; /* Thicker border */
+    cursor: move;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+}
+
+
+.hidden {
+    display: none;
+}
