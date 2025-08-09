@@ -37,6 +37,51 @@ document.addEventListener('DOMContentLoaded', function () {
     let lastDragTime = 0;
     const dragThrottle = 16; // ~60fps
     const daysPerYear = 365;
+    let reminders = [];
+
+function addReminderToBox(reminderText) {
+    const list = document.getElementById('reminder-list');
+
+    // Create list item
+    const li = document.createElement('li');
+    li.style.borderBottom = '1px solid #eee';
+    li.style.padding = '5px 0';
+    li.style.display = 'flex';
+    li.style.alignItems = 'center';
+    li.style.gap = '8px';
+
+    // Create checkbox
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+
+    // Create span for text
+    const span = document.createElement('span');
+    span.textContent = reminderText;
+
+    // When checkbox is toggled, style the text
+    checkbox.addEventListener('change', () => {
+        if (checkbox.checked) {
+            span.style.textDecoration = 'line-through';
+            span.style.color = '#888';
+        } else {
+            span.style.textDecoration = 'none';
+            span.style.color = '';
+        }
+    });
+
+    // Append checkbox and text to li
+    li.appendChild(checkbox);
+    li.appendChild(span);
+
+    // Add to list
+    list.appendChild(li);
+
+    // Save to localStorage if enabled
+    let saved = JSON.parse(localStorage.getItem('reminders')) || [];
+    saved.push(reminderText);
+    localStorage.setItem('reminders', JSON.stringify(saved));
+}
+
 
     // Initialize
     function init() {
@@ -59,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.addEventListener('mouseup', endDrag);
     document.addEventListener('touchend', endDrag);
     document.addEventListener('keydown', handleKeyDown);
-    setReminderBtn.addEventListener('click', setReminder);
+    setReminderBtn.addEventListener('click',setReminder);
     upgradeBtn.addEventListener('click', showPremiumError);
     modalClose.addEventListener('click', closeModal);
     reminderText.addEventListener('input', updateCharCount);
@@ -74,13 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let lastMoveTime = 0;
     const MOVE_COOLDOWN = 90; // Minimum time between moves (reduced for faster response)
 
-    setReminderBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        alert('Nice Try! The button escaped again!');
-        // Move button away even when clicked
-        moveButtonToRandomPosition();
-        return false;
-    });
+    
 
     // High frequency mouse tracking - no throttling for maximum responsiveness
     document.addEventListener('mousemove', (e) => {
@@ -367,6 +406,9 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!reminder) {
             showModal("No Reminder", "Please enter a reminder text.", "OK");
             return;
+            // After showModal(...) in setReminder()
+
+
         }
 
         if (Math.random() < 0.2) {
@@ -375,6 +417,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 "A solar flare wiped your reminder because 'the Sun got mad.'\n\nTry again when the Sun is in a better mood.",
                 "OK"
             );
+            addReminderToBox(reminder);
             return;
         }
 
@@ -383,8 +426,9 @@ document.addEventListener('DOMContentLoaded', function () {
             `"${reminder}" has been scheduled for:\n\n${currentDateEl.textContent}\n\nGood luck remembering across spacetime!`,
             "OK"
         );
-    }
+        addReminderToBox(reminder);
 
+    }
     function showPremiumError() {
         showModal(
             "💸 Payment Gateway Lost in Space 💸",
