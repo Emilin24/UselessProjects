@@ -67,12 +67,17 @@ Maintain orbit stability or cause an extinction event
 # Screenshots (Add at least 3)
 https://github.com/Emilin24/UselessProjects/blob/main/loginpage.jpeg
 Sccreenshot 1 shows the login page.
+![loginpage](https://github.com/user-attachments/assets/4f1433eb-d2d6-4afd-98fd-a37ab15a522d)
+
 
 https://github.com/Emilin24/UselessProjects/blob/main/orbit.jpeg
 Screenshot 2 shows the solar system orbit that you have to drag to set the date.
+![orbit](https://github.com/user-attachments/assets/bad62d9e-760d-4a55-8a7c-7b3581840678)
+
 
 https://github.com/Emilin24/UselessProjects/blob/main/saved_reminder.jpeg
 Screenshot 3 shows the saved reminders section.
+![saved_reminder](https://github.com/user-attachments/assets/e89c7a63-8b2f-4636-8564-ecc89aa44478)
 
 # Diagrams
 
@@ -97,6 +102,10 @@ The browser visually shows the updated orbit and the saved reminders section.*
 ### Project Demo
 # Video
 https://github.com/Emilin24/UselessProjects/blob/main/orbitcaldemo.mp4
+
+https://drive.google.com/file/d/1oy1ngcqVG9V7GJ0Xu-30bxFpS3gwA5hf/view?usp=sharing
+https://github.com/user-attachments/assets/ffe1603b-e66f-4a76-b4cb-283e9b4a3d95
+
 
 The video opens on the OrbitCal™ login page, where instead of a normal authentication, the user is greeted with the question: “Pinky promise this is your real account?”
 To proceed, they must drag a cartoon pinky finger image across the screen until it touches another pinky finger image — sealing the “promise.”
